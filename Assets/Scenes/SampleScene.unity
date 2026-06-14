@@ -263,8 +263,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5567151, y: 0.7878498, z: 0.26644412}
-  m_Center: {x: -0.0630584, y: 0.05042839, z: 0.031800736}
+  m_Size: {x: 0.32000014, y: 0.64, z: 0.20000009}
+  m_Center: {x: 0.00000047683716, y: 0, z: -0.0000023841858}
 --- !u!4 &63421001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4815762921331828, guid: 557119266748ee745af0f6ca3b13d0ec, type: 3}
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd79dc2ea23587b4bb055e780ab45b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 1
+  raycastDistance: 1.5
   panelCloud: {fileID: 1635245267}
   panelTalk: {fileID: 2077329481}
 --- !u!95 &94619346
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 280015425}
   - component: {fileID: 280015427}
   - component: {fileID: 280015426}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextTalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1798,9 +1798,10 @@ GameObject:
   - component: {fileID: 418461502}
   - component: {fileID: 418461501}
   - component: {fileID: 418461503}
+  - component: {fileID: 418461504}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1871,7 +1872,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418461497}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!95 &418461503
 Animator:
   serializedVersion: 5
@@ -1893,6 +1894,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &418461504
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418461497}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1451542, y: 1.854994, z: 2.0133212}
+  m_Center: {x: 0.073479295, y: 0.42749703, z: -0.17973053}
 --- !u!4 &425440067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4538369088754348, guid: ec813b2a17b6a484fa3b309eb1bb3c53, type: 3}
@@ -2113,7 +2135,7 @@ GameObject:
   - component: {fileID: 467033446}
   - component: {fileID: 467033448}
   - component: {fileID: 467033447}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3120,7 +3142,7 @@ GameObject:
   - component: {fileID: 838741097}
   - component: {fileID: 838741099}
   - component: {fileID: 838741098}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3329,7 +3351,7 @@ GameObject:
   - component: {fileID: 878427107}
   - component: {fileID: 878427109}
   - component: {fileID: 878427108}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5788,7 +5810,7 @@ GameObject:
   - component: {fileID: 1599233667}
   - component: {fileID: 1599233669}
   - component: {fileID: 1599233668}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5996,7 +6018,7 @@ GameObject:
   - component: {fileID: 1635245268}
   - component: {fileID: 1635245271}
   - component: {fileID: 1635245270}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6160,7 +6182,7 @@ GameObject:
   - component: {fileID: 1732299908}
   - component: {fileID: 1732299910}
   - component: {fileID: 1732299909}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6367,7 +6389,7 @@ GameObject:
   - component: {fileID: 1758124588}
   - component: {fileID: 1758124587}
   - component: {fileID: 1758124586}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7278,7 +7300,7 @@ GameObject:
   - component: {fileID: 2077329482}
   - component: {fileID: 2077329484}
   - component: {fileID: 2077329483}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

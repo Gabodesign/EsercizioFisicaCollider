@@ -41,6 +41,10 @@ public class PlayerInteraction : MonoBehaviour
         bool hasHit = Physics.Raycast(ray, out hit, raycastDistance);
         Debug.DrawRay(ray.origin, ray.direction * raycastDistance, hasHit ? Color.red : Color.green);
 
+        Debug.Log(npcInTrigger);
+
+
+
         if (hasHit)
         {
             npcInTrigger = hit.collider.gameObject;
@@ -114,5 +118,13 @@ public class PlayerInteraction : MonoBehaviour
     {
         panelCloud.SetActive(!active);
         panelTalk.SetActive(active);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("NPC"))
+        {
+            npcInTrigger = other.gameObject;
+        }
     }
 }
