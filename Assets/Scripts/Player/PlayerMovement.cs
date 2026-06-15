@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Settaglio Movimento")]
+    [Header("Settaglio Movimento, salto e rotazione")]
     [SerializeField] private float walkSpeed = 4f;
     [SerializeField] private float runSpeed = 7f;
     [SerializeField] private float jumpForce = 5f;
@@ -82,9 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
         float targetSpeed = isRunning ? runSpeed : walkSpeed;
 
- 
         Vector3 moveDirection = new Vector3(direction.x, 0f, direction.y);
-
 
         Vector3 targetVelocity = moveDirection * targetSpeed;
 

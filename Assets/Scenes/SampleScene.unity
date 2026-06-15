@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 146716698}
   - component: {fileID: 146716697}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1502,7 +1502,6 @@ Transform:
   m_Children:
   - {fileID: 189061343}
   - {fileID: 1002944694}
-  - {fileID: 651634616}
   - {fileID: 418461498}
   - {fileID: 1073023560}
   - {fileID: 1748434711}
@@ -2136,7 +2135,7 @@ GameObject:
   - component: {fileID: 467033448}
   - component: {fileID: 467033447}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: Pallino 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2606,37 +2605,6 @@ Transform:
   - {fileID: 175940857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 27.4, y: 0, z: 0}
---- !u!1 &651634615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 651634616}
-  m_Layer: 0
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &651634616
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651634615}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65, y: 0, z: 3.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 339820845}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665029172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2617,7 @@ GameObject:
   - component: {fileID: 665029175}
   - component: {fileID: 665029174}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelIconW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2881,7 +2849,7 @@ GameObject:
   - component: {fileID: 712957977}
   - component: {fileID: 712957976}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2963,7 +2931,7 @@ GameObject:
   - component: {fileID: 739721975}
   - component: {fileID: 739721974}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3143,7 +3111,7 @@ GameObject:
   - component: {fileID: 838741099}
   - component: {fileID: 838741098}
   m_Layer: 0
-  m_Name: Image (2)
+  m_Name: Pallino 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3580,7 +3548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 26.2, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3943,7 +3911,7 @@ GameObject:
   - component: {fileID: 1118034962}
   - component: {fileID: 1118034961}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4512,7 +4480,7 @@ GameObject:
   - component: {fileID: 1384097172}
   - component: {fileID: 1384097171}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: PanelInteraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4616,7 +4584,7 @@ GameObject:
   - component: {fileID: 1393060433}
   - component: {fileID: 1393060432}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4978,7 +4946,7 @@ GameObject:
   - component: {fileID: 1449768748}
   - component: {fileID: 1449768747}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5055,7 +5023,7 @@ GameObject:
   - component: {fileID: 1461440373}
   - component: {fileID: 1461440372}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelIcons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5563,7 +5531,7 @@ GameObject:
   - component: {fileID: 1577586797}
   - component: {fileID: 1577586796}
   m_Layer: 5
-  m_Name: Panel (3)
+  m_Name: PanelJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5811,7 +5779,7 @@ GameObject:
   - component: {fileID: 1599233669}
   - component: {fileID: 1599233668}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Pallino 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6019,7 +5987,7 @@ GameObject:
   - component: {fileID: 1635245271}
   - component: {fileID: 1635245270}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: PanelCloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6107,7 +6075,7 @@ GameObject:
   - component: {fileID: 1677032570}
   - component: {fileID: 1677032569}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6493,7 +6461,7 @@ GameObject:
   - component: {fileID: 1764015302}
   - component: {fileID: 1764015301}
   m_Layer: 5
-  m_Name: Panel (2)
+  m_Name: PanelRun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6659,7 +6627,7 @@ GameObject:
   - component: {fileID: 1803984788}
   - component: {fileID: 1803984787}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: PanelIconASD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6996,7 +6964,7 @@ GameObject:
   - component: {fileID: 1881713620}
   - component: {fileID: 1881713619}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7301,7 +7269,7 @@ GameObject:
   - component: {fileID: 2077329484}
   - component: {fileID: 2077329483}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: PanelTalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

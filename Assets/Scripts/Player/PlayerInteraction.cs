@@ -1,9 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Raycast Settings")]
     [SerializeField] private float raycastDistance = 1.5f;
+
+    [Header("Panel Dialogue")]
     [SerializeField] private GameObject panelCloud;
     [SerializeField] private GameObject panelTalk;
 
@@ -13,6 +17,12 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameObject npcInTrigger;
     private bool isInteractPressed = false;
+
+    //animazioni dell NPC Gino e UI nuvoletta dialogo 
+    private static readonly int Idle_Back = Animator.StringToHash("Idle_Back");
+    private static readonly int Idle_Right = Animator.StringToHash("Idle_Right");
+    private static readonly int Idle_Front = Animator.StringToHash("Idle_Front");
+    private static readonly int IsTalk = Animator.StringToHash("IsTalk");
 
     private void OnEnable()
     {
@@ -45,7 +55,7 @@ public class PlayerInteraction : MonoBehaviour
 
 
 
-        if (hasHit)
+        if (hasHit)// se abbiamo colpito NPC
         {
             npcInTrigger = hit.collider.gameObject;
             currentNpc = hit.collider.GetComponent<NPC>();
@@ -55,32 +65,34 @@ public class PlayerInteraction : MonoBehaviour
                 isInteractPressed = false;
 
                 Animator npcAnim = currentNpc.animator;
+                //controlli se NPC corrente abbia il componente Animator e che i panelCloud e Talk non siano null
                 if (npcAnim != null && panelCloud != null && panelTalk != null)
                 {
-                    if (!isTalkingWithNpc)
+                    if (!isTalkingWithNpc)// controllo se non sto parlado con NPC
                     {
                         isTalkingWithNpc = true;
                         ChangePanel(true);
 
+                        //in base in quale direzione sto parlando con NPC gli cambio animazione 
                         animatorStateInfo = playerAnim.anim.GetCurrentAnimatorStateInfo(0);
 
                         if (animatorStateInfo.IsName("IdleFront"))
                         {
                             currentNpc.ResetAllIdleBools();
-                            currentNpc.animator.SetBool("Idle_Back", true);
-                            currentNpc.parentAnimator.SetBool("IsTalk", true);
+                            currentNpc.animator.SetBool(Idle_Back, true);
+                            currentNpc.parentAnimator.SetBool(IsTalk, true);
                         }
                         else if (animatorStateInfo.IsName("IdleLeft"))
                         {
                             currentNpc.ResetAllIdleBools();
-                            currentNpc.animator.SetBool("Idle_Right", true);
-                            currentNpc.parentAnimator.SetBool("IsTalk", true);
+                            currentNpc.animator.SetBool(Idle_Right, true);
+                            currentNpc.parentAnimator.SetBool(IsTalk, true);
                         }
                         else if (animatorStateInfo.IsName("IdleBack"))
                         {
                             currentNpc.ResetAllIdleBools();
-                            currentNpc.animator.SetBool("Idle_Front", true);
-                            currentNpc.parentAnimator.SetBool("IsTalk", true);
+                            currentNpc.animator.SetBool(Idle_Front, true);
+                            currentNpc.parentAnimator.SetBool(IsTalk, true);
                         }
                     }
                     else
@@ -113,7 +125,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         isInteractPressed = true;
     }
-
+    //Attivo e disattivo i due panneli presenti nel gioco
     private void ChangePanel(bool active)
     {
         panelCloud.SetActive(!active);

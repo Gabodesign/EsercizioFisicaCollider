@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
     public Animator anim;
+    public float acceleration = 5f;
+
+    private static readonly int MoveHashX = Animator.StringToHash("MoveX"); 
+    private static readonly int MoveHashY = Animator.StringToHash("MoveY");
+    private static readonly int IdleRight = Animator.StringToHash("IdleRight");
+    [HideInInspector]
+    public static readonly int IdleLeft = Animator.StringToHash("IdleLeft");
+    public static readonly int IdleFront = Animator.StringToHash("IdleFront");
+    public static readonly int IdleBack = Animator.StringToHash("IdleBack");
 
     private Vector2 currentInput;
     private Vector2 lastValidInput = Vector2.down; 
     private bool isRunning;
     private float currentSpeedValueX;
     private float currentSpeedValueY;
-    public float acceleration = 5f;
-    
 
     void Start()
     {
@@ -27,13 +33,13 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update()
     {
-
-
+        
         float targetSpeedX = 0f;
         float targetSpeedY = 0f;
 
         if (currentInput.magnitude > 0.1f)
         {
+            //Controllo se il player sta camminando o correndo
             float speedLimit = isRunning ? 1f : 0.5f;
 
             targetSpeedX = currentInput.x * speedLimit;
@@ -47,18 +53,19 @@ public class PlayerAnimator : MonoBehaviour
         currentSpeedValueX = Mathf.MoveTowards(currentSpeedValueX, targetSpeedX, acceleration * Time.deltaTime);
         currentSpeedValueY = Mathf.MoveTowards(currentSpeedValueY, targetSpeedY, acceleration * Time.deltaTime);
 
+        // controllo se il player è fermo e cambio di posizione Idle
         if (currentInput == Vector2.zero && Mathf.Abs(currentSpeedValueX) < 0.05f && Mathf.Abs(currentSpeedValueY) < 0.05f)
         {
             MemoryDirection();
 
-            anim.SetFloat("MoveX", 0f);
-            anim.SetFloat("MoveY", 0f);
+            anim.SetFloat(MoveHashX, 0f);
+            anim.SetFloat(MoveHashY, 0f);
         }
         else
         {
             ResetAllIdleBools();
-            anim.SetFloat("MoveX", currentSpeedValueX);
-            anim.SetFloat("MoveY", currentSpeedValueY);
+            anim.SetFloat(MoveHashX, currentSpeedValueX);
+            anim.SetFloat(MoveHashY, currentSpeedValueY);
         }
     }
 
@@ -87,23 +94,23 @@ public class PlayerAnimator : MonoBehaviour
 
         if (Mathf.Abs(lastValidInput.x) > Mathf.Abs(lastValidInput.y))
         {
-            // Movimento Orizzontale
+            // Posizione ultima idle salvata Orizzontale
             if (lastValidInput.x > 0f)
-                anim.SetBool("IdleRight", true);
+                anim.SetBool(IdleRight, true);
             else
-                anim.SetBool("IdleLeft", true);
+                anim.SetBool(IdleLeft, true);
         }
         else
         {
-            // Movimento Verticale
+            // Posizione ultima idle salvata Verticale
             if (lastValidInput.y > 0f)
-                anim.SetBool("IdleBack", true); 
+                anim.SetBool(IdleBack, true); 
             else
-                anim.SetBool("IdleFront", true); 
+                anim.SetBool(IdleFront, true); 
         }
     }
 
-    
+    // Reset delle posizione di Idle prima di memorizzare l'ultima direzione 
     private void ResetAllIdleBools()
     {
         anim.SetBool("IdleLeft", false);

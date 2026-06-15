@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour
     [SerializeField] public Animator parentAnimator;
 
    
-
+    //separazione animazione del NPC e UI WorldSpace
     public void ResetAllIdleBools()
     {
         animator.SetBool("Idle_Front", false);
