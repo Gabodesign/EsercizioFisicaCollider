@@ -10,10 +10,10 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int MoveHashX = Animator.StringToHash("MoveX"); 
     private static readonly int MoveHashY = Animator.StringToHash("MoveY");
     private static readonly int IdleRight = Animator.StringToHash("IdleRight");
-    [HideInInspector]
-    public static readonly int IdleLeft = Animator.StringToHash("IdleLeft");
-    public static readonly int IdleFront = Animator.StringToHash("IdleFront");
-    public static readonly int IdleBack = Animator.StringToHash("IdleBack");
+    
+    private static readonly int IdleLeft = Animator.StringToHash("IdleLeft");
+    private static readonly int IdleFront = Animator.StringToHash("IdleFront");
+    private static readonly int IdleBack = Animator.StringToHash("IdleBack");
 
     private Vector2 currentInput;
     private Vector2 lastValidInput = Vector2.down; 
